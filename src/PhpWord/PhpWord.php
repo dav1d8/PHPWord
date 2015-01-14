@@ -49,6 +49,9 @@ class PhpWord
      * @deprecated 0.11.0 Use Settings constants
      */
     const DEFAULT_FONT_NAME = Settings::DEFAULT_FONT_NAME;
+    const DEFAULT_FONT_NAME_EAST_ASIA = Settings::DEFAULT_FONT_NAME_EAST_ASIA;
+    const DEFAULT_FONT_NAME_COMPLEX_SCRIPT = Settings::DEFAULT_FONT_NAME_COMPLEX_SCRIPT;
+    const DEFAULT_FONT_NAME_HIGH_ANSI = Settings::DEFAULT_FONT_NAME_HIGH_ANSI;
     const DEFAULT_FONT_SIZE = Settings::DEFAULT_FONT_SIZE;
     const DEFAULT_FONT_COLOR = Settings::DEFAULT_FONT_COLOR;
     const DEFAULT_FONT_CONTENT_TYPE = Settings::DEFAULT_FONT_CONTENT_TYPE;
@@ -227,6 +230,69 @@ class PhpWord
     public function setDefaultFontName($fontName)
     {
         Settings::setDefaultFontName($fontName);
+    }
+
+    /**
+     * Get default font name for East Asian characters
+     *
+     * @return string
+     */
+    public function getDefaultFontNameEastAsia()
+    {
+        return Settings::getDefaultFontNameEastAsia();
+    }
+
+    /**
+     * Set default font name for East Asian characters
+     *
+     * @param string $fontName
+     * @return void
+     */
+    public function setDefaultFontNameEastAsia($fontName)
+    {
+        Settings::setDefaultFontNameEastAsia($fontName);
+    }
+
+    /**
+     * Get default font name for complex scripts
+     *
+     * @return string
+     */
+    public function getDefaultFontNameComplexScript()
+    {
+        return Settings::getDefaultFontNameComplexScript();
+    }
+
+    /**
+     * Set default font name for complex scripts
+     *
+     * @param string $fontName
+     * @return void
+     */
+    public function setDefaultFontNameComplexScript($fontName)
+    {
+        Settings::setDefaultFontNameComplexScript($fontName);
+    }
+
+    /**
+     * Get default font name for high ANSI characters
+     *
+     * @return string
+     */
+    public function getDefaultFontNameHighAnsi()
+    {
+        return Settings::getDefaultFontNameHighAnsi();
+    }
+
+    /**
+     * Set default font name for high ANSI characters
+     *
+     * @param string $fontName
+     * @return void
+     */
+    public function setDefaultFontNameHighAnsi($fontName)
+    {
+        Settings::setDefaultFontNameHighAnsi($fontName);
     }
 
     /**

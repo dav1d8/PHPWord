@@ -84,6 +84,9 @@ class Styles extends AbstractPart
     private function writeDefaultStyles(XMLWriter $xmlWriter, $styles)
     {
         $fontName = PhpWordSettings::getDefaultFontName();
+        $fontNameEastAsia = PhpWordSettings::getDefaultFontNameEastAsia();
+        $fontNameComplexScript = PhpWordSettings::getDefaultFontNameComplexScript();
+        $fontNameHighAnsi = PhpWordSettings::getDefaultFontNameHighAnsi();
         $fontSize = PhpWordSettings::getDefaultFontSize();
 
         // Default font
@@ -92,9 +95,9 @@ class Styles extends AbstractPart
         $xmlWriter->startElement('w:rPr');
         $xmlWriter->startElement('w:rFonts');
         $xmlWriter->writeAttribute('w:ascii', $fontName);
-        $xmlWriter->writeAttribute('w:hAnsi', $fontName);
-        $xmlWriter->writeAttribute('w:eastAsia', $fontName);
-        $xmlWriter->writeAttribute('w:cs', $fontName);
+        $xmlWriter->writeAttribute('w:hAnsi', $fontNameHighAnsi);
+        $xmlWriter->writeAttribute('w:eastAsia', $fontNameEastAsia);
+        $xmlWriter->writeAttribute('w:cs', $fontNameComplexScript);
         $xmlWriter->endElement(); // w:rFonts
         $xmlWriter->startElement('w:sz');
         $xmlWriter->writeAttribute('w:val', $fontSize * 2);

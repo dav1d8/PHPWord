@@ -67,6 +67,9 @@ class Settings
      * use, and the conversion will be conducted during XML writing.
      */
     const DEFAULT_FONT_NAME = 'Arial';
+    const DEFAULT_FONT_NAME_EAST_ASIA = self::DEFAULT_FONT_NAME;
+    const DEFAULT_FONT_NAME_COMPLEX_SCRIPT = self::DEFAULT_FONT_NAME;
+    const DEFAULT_FONT_NAME_HIGH_ANSI = self::DEFAULT_FONT_NAME;
     const DEFAULT_FONT_SIZE = 10;
     const DEFAULT_FONT_COLOR = '000000';
     const DEFAULT_FONT_CONTENT_TYPE = 'default'; // default|eastAsia|cs
@@ -112,6 +115,27 @@ class Settings
      * @var string
      */
     private static $defaultFontName = self::DEFAULT_FONT_NAME;
+
+    /**
+     * Default font name for east asia text
+     *
+     * @var string
+     */
+    private static $defaultFontNameEastAsia = self::DEFAULT_FONT_NAME_EAST_ASIA;
+
+    /**
+     * Default font name for complex script
+     *
+     * @var string
+     */
+    private static $defaultFontNameComplexScript = self::DEFAULT_FONT_NAME_COMPLEX_SCRIPT;
+
+    /**
+     * Default font name for high ansi characters
+     *
+     * @var string
+     */
+    private static $defaultFontNameHighAnsi = self::DEFAULT_FONT_NAME_HIGH_ANSI;
 
     /**
      * Default font size
@@ -327,6 +351,87 @@ class Settings
     {
         if (is_string($value) && trim($value) !== '') {
             self::$defaultFontName = $value;
+            self::$defaultFontNameEastAsia = $value;
+            self::$defaultFontNameComplexScript = $value;
+            self::$defaultFontNameHighAnsi = $value;
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Get default font name for East Asian text
+     *
+     * @return string
+     */
+    public static function getDefaultFontNameEastAsia()
+    {
+        return self::$defaultFontNameEastAsia;
+    }
+
+    /**
+     * Set default font name for East Asian text
+     *
+     * @param string $value
+     * @return bool
+     */
+    public static function setDefaultFontNameEastAsia($value)
+    {
+        if (is_string($value) && trim($value) !== '') {
+            self::$defaultFontNameEastAsia = $value;
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Get default font name for complex script
+     *
+     * @return string
+     */
+    public static function getDefaultFontNameComplexScript()
+    {
+        return self::$defaultFontNameComplexScript;
+    }
+
+    /**
+     * Set default font name for complex script
+     *
+     * @param string $value
+     * @return bool
+     */
+    public static function setDefaultFontNameComplexScript($value)
+    {
+        if (is_string($value) && trim($value) !== '') {
+            self::$defaultFontNameComplexScript = $value;
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Get default font name for high ANSI characters
+     *
+     * @return string
+     */
+    public static function getDefaultFontNameHighAnsi()
+    {
+        return self::$defaultFontNameHighAnsi;
+    }
+
+    /**
+     * Set default font name for high ANSI characters
+     *
+     * @param string $value
+     * @return bool
+     */
+    public static function setDefaultFontNameHighAnsi($value)
+    {
+        if (is_string($value) && trim($value) !== '') {
+            self::$defaultFontNameHighAnsi = $value;
             return true;
         }
 
