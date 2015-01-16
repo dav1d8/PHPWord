@@ -136,6 +136,7 @@ class Text extends AbstractElement
      */
     public function setText($text)
     {
+        $text = htmlentities($text);
         $this->text = String::toUTF8($text);
 
         return $this;
